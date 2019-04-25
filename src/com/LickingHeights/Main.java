@@ -14,13 +14,16 @@ public class Main {
         System.out.println("Which month were you born in (number form)?");
         int year = keyboard.nextInt();
         int m = keyboard.nextInt();
+        System.out.println(monthName(m) + " has " + monthDays(m,year) + " days.");
 
-	    System.out.println(monthName(m) + " has " + monthDays(m,year) + " days.");
+        System.out.println("What day of the month were you born on (number form)?");
+        int q = keyboard.nextInt();
+        int K = year%100;
+        int J = year/100;
+        int h;
+        h = (q+((13*m+13)/5)+K+(K/4)+(J/4)+(5*J))%7;
+        System.out.println(h);
 
-	    System.out.println("What day of the month were you born on?");
-	    int q = keyboard.nextInt();
-	    int k = year%100;
-	    int
         }
     }
 
@@ -88,7 +91,7 @@ public class Main {
         }
         return "Invalid";
     }
-    public static String dayOfTheWeekVariables(){
-        
+    public static String dayOfTheWeekVariables(int h){
+
     }
 }
