@@ -12,9 +12,10 @@ public class Main {
 
 	while (loop){
         System.out.println("Which month were you born in (number form)?");
-        int month = keyboard.nextInt();
         int year = keyboard.nextInt();
-	    System.out.println("The month of your birth has " + MonthDays(year,month) + " days.");
+        int month = keyboard.nextInt();
+
+	    System.out.println(monthName(month) + " has " + monthDays(month,year) + " days.");
 
 
         }
@@ -22,7 +23,7 @@ public class Main {
 
 
 
-    public static String MonthDays (int month, int year){
+    public static String monthDays(int month, int year){
 
         switch (month){
             case 1:
@@ -50,5 +51,38 @@ public class Main {
 
 
 
+
+
+
+    }
+    public static String monthName(int month){
+
+        switch (month){
+            case 1:
+                return "January";
+            case 2:
+                return "February";
+            case 3:
+                return "March";
+            case 4:
+                return "April";
+            case 5:
+                return "May";
+            case 6:
+                return "June";
+            case 7:
+                return "July";
+            case 8:
+                return "August";
+            case 9:
+                return "September";
+            case 10:
+                return "October";
+            case 11:
+                return "November";
+            case 12:
+                return "December";
+        }
+        return "Invalid";
     }
 }
