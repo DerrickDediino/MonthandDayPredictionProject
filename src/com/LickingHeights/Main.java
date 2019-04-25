@@ -13,11 +13,14 @@ public class Main {
 	while (loop){
         System.out.println("Which month were you born in (number form)?");
         int year = keyboard.nextInt();
-        int month = keyboard.nextInt();
+        int m = keyboard.nextInt();
 
-	    System.out.println(monthName(month) + " has " + monthDays(month,year) + " days.");
+	    System.out.println(monthName(m) + " has " + monthDays(m,year) + " days.");
 
-
+	    System.out.println("What day of the month were you born on?");
+	    int q = keyboard.nextInt();
+	    int k = year%100;
+	    int
         }
     }
 
@@ -84,5 +87,8 @@ public class Main {
                 return "December";
         }
         return "Invalid";
+    }
+    public static String dayOfTheWeekVariables(){
+        
     }
 }
