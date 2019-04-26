@@ -18,11 +18,7 @@ public class Main {
 
         System.out.println("What day of the month were you born on (number form)?");
         int q = keyboard.nextInt();
-        int K = year%100;
-        int J = year/100;
-        int h;
-        h = (q+((13*m+13)/5)+K+(K/4)+(J/4)+(5*J))%7;
-        System.out.println(h);
+        System.out.println("You were born on a " + dayOfTheWeek(q, m, year));
 
         }
     }
@@ -53,7 +49,7 @@ public class Main {
 
 
         }
-        return "Invalid";
+        return "Error";
 
 
 
@@ -89,9 +85,42 @@ public class Main {
             case 12:
                 return "December";
         }
-        return "Invalid";
+        return "Error";
     }
-    public static String dayOfTheWeekVariables(int h){
+    public static String dayOfTheWeek(int day, int month, int year) {
 
+        int m = month;
+        int q = day;
+        if(m==1){
+            m=13;
+            year--;
+        }
+        if (m==2){
+            m=14;
+            year--;
+        }
+        int K = year%100;
+        int J = year/100;
+
+        int h = (q+((13*m+13)/5)+K+(K/4)+(J/4)+(5*J))%7;
+
+        switch (h) {
+            case 0:
+                return "Saturday";
+            case 1:
+                return "Sunday";
+            case 2:
+                return "Monday";
+            case 3:
+                return "Tuesday";
+            case 4:
+                return "Wednesday";
+            case 5:
+                return "Thursday";
+            case 6:
+                return "Friday";
+        }
+        return "Error";
     }
+
 }
